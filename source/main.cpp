@@ -83,15 +83,19 @@ int main(int argc, char* argv[]){
 	}
 	if(exists(root)){
 		if(args.size() == 0 || args[0] != "force"){
+			std::cout << std::endl;
+			std::cout << "============================= ERROR =============================" << std::endl;
 			std::cout << root << " already exists" << std::endl;
 			std::cout << "Remove " << root << " to continue installation" << std::endl;
-			std::cout << "Or run make install-force" << std::endl;
-			std::cout << "make install-force will not remove " << root << " folder" << std::endl;
+			std::cout << "Or run \"make install-force\", then installer will assume" << std::endl;
+			std::cout << "that all source files already are in " << root << " folder" << std::endl;
+			std::cout << "\"make install-force\" will not remove " << root << " folder" << std::endl;
 			std::cout << "If you want to completely reinstall the program remove " << root << " manually" << std::endl;
 			std::cout << std::endl;
 			return 0;
 		}
 	}
+	std::cout << std::endl;
 	std::cout << "====================== WARNING ======================" << std::endl;
 	std::cout << "Yosys installation is configured for the gcc compiler" << std::endl;
 	std::cout << "If you use another compiler you will have to deal with the configs yourself or install gcc" << std::endl;
