@@ -12,6 +12,8 @@ CFILES=$(foreach D, $(SOURCEDIR), $(wildcard $(D)/*.cpp))
 OBJECTS=$(patsubst $(SOURCEDIR)%.cpp, $(deps)%.o, $(CFILES))
 DEPFILES= $(patsubst $(SOURCEDIR)%.cpp, $(deps)%.d, $(CFILES)) $(deps)/installer.d
 
+all:$(OUTPUT)
+
 install:$(OUTPUT)
 	@./installer
 
@@ -20,8 +22,6 @@ install-force:$(OUTPUT)
 
 uninstall:$(OUTPUT)
 	@./installer uninstall
-
-all:$(OUTPUT)
 
 $(OUTPUT):$(OBJECTS)
 	$(CPPC) $^ -o $@
