@@ -1,6 +1,6 @@
 # Installation
 
-This little program will install yosys and yosys abc for SystemVerilog on your computer
+This little program will install yosys and yosys-slang for SystemVerilog designs on your computer
 
 To install yosys type:
 ```
